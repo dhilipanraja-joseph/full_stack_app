@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contacts Details</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Jquery minified Javascript -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- <script id="trTemplate" type="text/x-jquery-tmpl">
+              <tr>
+                  {{each $data}}
+                      <td>${Col}</td>
+                  {{/each}}
+              </tr>
+   </script> -->
+    <script src="script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="titile">Contacts</h1><br>
+      <form id="addContacts" class="col-sm-4">
+        <div class="form-group">
+            <input type="text" class="form-control" id="firstname" placeholder="First Name" required><br>
+            <input type="text" class="form-control" id="lastname" placeholder="Last Name" required><br>
+            <input type="email" class="form-control" id="email" placeholder="Email"><br>
+            <input type="number" class="form-control" id="phoneNum" placeholder="phone"><br>
+        </div>
+        <button type="submit" class="btn btn-success" name="button">Add Contact</button>
+        <button class="btn btn-danger" type="reset">Reset</button>
+      </form>
+    </div>
+    <div class="container">
+      <br>
+      <hr>
+      <table id="contactTable" class="table">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td>phone#</td>
+          </tr> -->
+          <!-- <tr>
+            <td>Mary</td>
+            <td>Moe</td>
+            <td>mary@example.com</td>
+            <td>123456</td>
+          </tr> -->
+          <tr id="template">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <!-- Trigger the modal with a button -->
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+<!-- Modal -->
+<div id="editModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Contact</h4>
+      </div>
+      <form id="changeContact">
+      <div class="modal-body">
+        <div class="form-group">
+
+            <input type="text" class="form-control" id="eFirstname" placeholder="First Name" required><br>
+            <input type="text" class="form-control" id="eLastname" placeholder="Last Name" required><br>
+
+            <input type="email" class="form-control" id="eEmail" placeholder="Email"><br>
+            <input type="number" class="form-control" id="ePhoneNum" placeholder="phone">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="deleteContact" type="button" class="btn btn-danger" data-dismiss="modal">Delete Contact</button>
+        <button id="applyChanges" type="button" class="btn btn-success" data-dismiss="modal">Apply Change</button>
+      </div>
+    </form>
+    </div>
+
+  </div>
+</div>
+
+</html>
